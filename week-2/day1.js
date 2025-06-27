@@ -1,6 +1,8 @@
 // Array methods
-// const fruits = ["Banana", "Orange", "Apple", "Mango", "Fresa", "Kiwi"];
-// const newArr = fruits.copyWithin(2, 1, 3);
+
+const fruits = ["Banana", "Orange", "Apple", "Mango", "Fresa", "Kiwi"];
+const newArr = fruits.copyWithin(2, 1, 3);
+
 // console.log(newArr);
 // const str = "Pablito clavo una manutension a su esposa lavalprestol";
 // const str = "anaban"

@@ -11,25 +11,55 @@ const estudiantes = [
 
 // 1️⃣ MAP
 // Reto: Crea un nuevo array con los nombres de los estudiantes en mayúsculas.
-// const nombresEnMayusculas = ...
+const nombresEnMayusculas = [];
+
+const mayúsculas = estudiantes.map((student) => {
+  nombresEnMayusculas.push(student.nombre.toUpperCase());
+});
+
+console.log(nombresEnMayusculas);
 
 // 2️⃣ FILTER
 // Reto: Filtra los estudiantes que tienen promedio mayor o igual a 7 (aprobados).
-// const aprobados = ...
+ const aprobados = estudiantes.filter((student) => {
+   return student.promedio >= 7
+ });
+
+ console.log(aprobados);
 
 // 3️⃣ SORT
 // Reto: Ordena el array original de estudiantes de mayor a menor según el promedio.
-// const ordenadosPorPromedio = ...
+const ordenadosPorPromedio = estudiantes.sort((menor, mayor) => {
+
+  return mayor.promedio - menor.promedio
+
+});
+
+console.log(ordenadosPorPromedio);
 
 // 4️⃣ REDUCE
 // Reto: Calcula el promedio global de toda la clase (promedio de promedios).
-// const promedioClase = ...
+ const promedioClase = estudiantes.reduce((total, suma) => {
+
+ return total + suma.promedio
+
+ }, 0);
+
+ console.log(promedioClase / estudiantes.length);
 
 // 5️⃣ FIND
 // Reto: Encuentra al estudiante con el nombre "Carlos".
-// const carlos = ...
+ const carlos = estudiantes.find((student) => {
+
+return student.nombre ===  'Carlos';
+
+ });
+
+ console.log(carlos);
 
 // 6️⃣ FOREACH
 // Reto: Imprime en consola un resumen de cada estudiante con el formato:
 // "Ana tiene 21 años y un promedio de 8.5"
-// estudiantes.forEach( ... )
+
+ estudiantes.forEach((student) => console.log(`${student.nombre} tiene ${student.edad} años y un promedio de ${student.promedio} `));
+ 

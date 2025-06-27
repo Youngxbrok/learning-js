@@ -32,10 +32,11 @@ const fruits = ["Banana", "Orange", "Apple", "Mango", "Fresa"];
 // console.log(fruits.splice(2, 2));
 // console.log(fruits);
 
-//reduce() method
+//slice() method
 // console.log(fruits.slice(0, 3));
 // console.log(fruits);
 //
+//reduce() method
 // const d = simpleArr.reduce((a, b) => a * b, 1);
 //
 // console.log(d);
@@ -47,7 +48,7 @@ const fruits = ["Banana", "Orange", "Apple", "Mango", "Fresa"];
 // });
 //
 // filter() method
-// console.log(simpleArr.filter((x, y) => y > 3));
+//  console.log(simpleArr.filter((x, y) => y > 3));
 
 // sort() method
 // const number = [3, 7, 4, 1, 9, 2];
@@ -58,4 +59,4 @@ const fruits = ["Banana", "Orange", "Apple", "Mango", "Fresa"];
 // console.log(fruits.find((value) => value === "Apple"));
 
 // forEach() method
-/* fruits.forEach((fruit, index) => console.log(`${index + 1} - ${fruit}`)); */
+// fruits.forEach((fruit, index) => console.log(`${index + 1} - ${fruit}`)); 
