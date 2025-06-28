@@ -32,7 +32,32 @@
 //   // Escribe tu solución aquí paso a paso...
 // }
 
+const isAnagram = (str1, str2) => { 
+
+    let frequency = {};
+
+ if (typeof str1 !== "string" || typeof str2 !== "string") 
+    throw new Error("Fockiu, tu no entiendee! Te pedimos un valor de tipo string!");
+ 
+ if (str1.length !== str2.length) return false;
+
+for (let counter of str1.toLowerCase()) {
+    frequency[counter] = (frequency[counter] || 0) +1;
+}
+
+for (let counter of str2.toLowerCase()) {
+    if (!frequency[counter]) {
+        return false;
+    } else {
+        frequency[counter] -= 1
+    }
+}
+ return true;
+
+
+};
+
 // Usa console.log para probar:
-// console.log(isAnagrama("roma", "amor")) // true
-// isAnagrama("Roma", "Amor") → true (ignorar mayúsculas)
-// isAnagrama("perro", "gato") → false
+console.log(isAnagram("nap", "pan")) // true
+console.log(isAnagram("mamI", "Mami")) //→ true (ignorar mayúsculas)
+console.log(isAnagram("perro", "gato")) //→ false
