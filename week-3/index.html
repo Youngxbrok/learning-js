@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motherfucking note take</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <script src="app.js" defer></script>
+  </head>
+  <body class="dark-theme">
+    <header>
+      <h1>Motherfucking note take</h1>
+      <div>
+        <button id="add-btn" class="add-note-btn" onclick="openNoteDialog()">
+          Add A Motherfucking note
+        </button>
+        <button id="themeBtn" class="toggle-theme-btn">🌙</button>
+      </div>
+    </header>
+
+    <main id="notesContainer" class="notes-grid">
+      <!-- <div class="note-card"> -->
+      <!--   <h3 class="note-title">Motherfucking Title Example</h3> -->
+      <!--   <p class="note-content">Motherfucking content example</p> -->
+      <!--   <div class="note-actions"> -->
+      <!--     <button class="edit-btn"> -->
+      <!--       <span class="material-symbols-outlined">edit</span> -->
+      <!--     </button> -->
+      <!--     <button class="delete-btn"> -->
+      <!--       <span class="material-symbols-outlined">delete</span> -->
+      <!--     </button> -->
+      <!--   </div> -->
+      <!-- </div> -->
+    </main>
+    <dialog id="noteDialog">
+      <div class="dialog-content">
+        <div class="dialog-header">
+          <h2 id="dialogTitle" class="dialog-title">
+            Add a New Motherfucking Note
+          </h2>
+          <button class="btn-close" onclick="closeNoteDialog()">X</button>
+        </div>
+
+        <form id="noteForm">
+          <div class="form-group">
+            <label for="title" class="form-label"> Title </label>
+            <input
+              type="text"
+              id="noteTitle"
+              class="form-input"
+              placeholder="Motherfuncking title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="content" class="form-label"> Content </label>
+            <input
+              type="text"
+              id="noteContent"
+              class="form-textarea"
+              placeholder="Motherfucking content"
+              required
+            />
+          </div>
+          <div class="dialog-actions">
+            <button type="submit" class="save-btn">Save the Mf note</button>
+            <button
+              type="button"
+              class="cancel-btn"
+              onclick="closeNoteDialog()"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </body>
+</html>
