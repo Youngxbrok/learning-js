@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #7c05b7;
+  --text-color: #191b23;
+  --surface-color: #fff;
+  --base-color: #f2f4f8;
+  --base-transparent-90: rgba(247, 247, 247, 0.9);
+  --base-transparent-100: rgba(247, 247, 247, 1);
+}
+
+.dark-theme {
+  --primary-color: #7c05b7;
+  --text-color: #fff;
+  --surface-color: #2c2f38;
+  --base-color: #1e1f26;
+  --base-transparent-90: rgba(30, 31, 38, 0.9);
+  --base-transparent-100: rgba(30, 31, 38, 1);
+}
+
+body {
+  background: var(--base-color);
+  color: var(--text-color);
+  margin: 2rem;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.add-note-btn {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.add-note-btn:hover {
+  background-color: #a569bd;
+}
+
+.toggle-theme-btn {
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 2.5s ease;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.toggle-theme-btn {
+  background-color: var(--primary-color);
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  position: relative;
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.note-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.note-title {
+  word-wrap: break-word;
+  width: 15rem;
+  font-weight: 600;
+  font-size: 1.65rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.note-content {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  color: var(--text-color);
+}
+
+.note-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.note-card:hover .note-actions {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 0.375rem;
+  background-color: var(--base-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+  border: 1px solid var(--surface-color);
+}
+
+.edit-btn:hover {
+  background-color: var(--base-transparent-100);
+  transform: scale(1.05);
+}
+
+.delete-btn:hover {
+  background-color: var(--base-transparent-100);
+  transform: scale(1.05);
+}
+
+dialog {
+  margin: auto;
+  inset: 0;
+  border: none;
+  border-radius: 1rem;
+  padding: 0;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  max-width: 500px;
+  width: 90vw;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.dialog-content {
+  padding: 2rem;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dialog-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.dialog-content {
+  padding: 1rem 1.5rem 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--base-transparent-100);
+  border-radius: 0.5rem;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.save-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.save-btn:hover {
+  background-color: #a569bd;
+}
+
+.cancel-btn {
+  background-color: var(--base-color);
+  color: var(--text-color);
+  border: 1px solid var(--base-transparent-100);
+}
+
+.cancel-btn:hover {
+  background-color: var(--base-transparent-90);
+}
