@@ -16,26 +16,25 @@
     <header>
       <h1>Motherfucking note take</h1>
       <div>
-        <button id="add-btn" class="add-note-btn" onclick="openNoteDialog()">
+        <button id="add-btn" class="add-note-btn" onclick="showModal()">
           Add A Motherfucking note
         </button>
-        <button id="themeBtn" class="toggle-theme-btn">🌙</button>
+        <button id="themeBtn" class="toggle-theme-btn" onclick="toggleTheme()">🌗</button>
       </div>
     </header>
-
     <main id="notesContainer" class="notes-grid">
-      <!-- <div class="note-card"> -->
-      <!--   <h3 class="note-title">Motherfucking Title Example</h3> -->
-      <!--   <p class="note-content">Motherfucking content example</p> -->
-      <!--   <div class="note-actions"> -->
-      <!--     <button class="edit-btn"> -->
-      <!--       <span class="material-symbols-outlined">edit</span> -->
-      <!--     </button> -->
-      <!--     <button class="delete-btn"> -->
-      <!--       <span class="material-symbols-outlined">delete</span> -->
-      <!--     </button> -->
-      <!--   </div> -->
-      <!-- </div> -->
+       <div class="note-card"> 
+         <h3 class="note-title">Motherfucking Title Example</h3> 
+         <p class="note-content">Motherfucking content example</p> 
+        <div class="note-actions"> 
+       <button class="edit-btn"> 
+      <span class="material-symbols-outlined" onclick="editNote(note.id)">edit</span> 
+       </button> 
+      <button class="delete-btn"> 
+      <span class="material-symbols-outlined" onclick="deleteNote(note.id)">delete</span> 
+      </button> 
+      </div> 
+      </div> 
     </main>
     <dialog id="noteDialog">
       <div class="dialog-content">
@@ -43,7 +42,7 @@
           <h2 id="dialogTitle" class="dialog-title">
             Add a New Motherfucking Note
           </h2>
-          <button class="btn-close" onclick="closeNoteDialog()">X</button>
+          <button class="btn-close" onclick="closeNote()">X</button>
         </div>
 
         <form id="noteForm">
@@ -68,11 +67,11 @@
             />
           </div>
           <div class="dialog-actions">
-            <button type="submit" class="save-btn">Save the Mf note</button>
+            <button type="submit" class="save-btn" onclick="addNote()">Save the Mf note</button>
             <button
               type="button"
               class="cancel-btn"
-              onclick="closeNoteDialog()"
+              onclick="closeNote()"
             >
               Cancel
             </button>
